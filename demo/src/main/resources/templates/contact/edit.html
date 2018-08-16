@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Editing Contact</h2>
+    
+      <p>let the boxes empty for no changes</p>  
+      <p th:text="${contact.name} +' ' + ${contact.surname}"></p>
+	<form method="post" action="/agenda_edit" >
+	 
+		New name: <input name="name" th:placeholder="${contact.name}" /> </br>
+        New surname: <input name ="surname" th:placeholder="${contact.surname}" /></br>
+<!--         <input type="hidden" name="id" th:value="${id}"></input> -->
+		<button type="submit">Update</button>
+	</form>
+</body>
+</html>
+<!-- get /agenda/delete/:id -->

@@ -1,0 +1,19 @@
+<!-- "contact/list" -->
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Contact List</h2>
+		<ul>
+			<li th:each="contact :${atrAgenda}" 
+				th:inline="text" th:value="${contact.id}">
+				ID_[[${contact.id}]]: [[${contact.name}]], [[${contact.surname}]]
+		
+			<a th:href="|agenda_del/${contact.id}|">  DELETE </a> - -
+			<a th:href="|agenda_edit/${contact.id}|">  EDIT </a></br>
+			</li>
+		</ul>
+	</br>
+	<a href="agenda_add">ADD</a></br>
+	<a href="/"><b>INDEX</b></a>
+</body>
+</html>

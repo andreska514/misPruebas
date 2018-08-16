@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <a href="book_add">añadir</a>
+
+    <ul>
+        <li th:each="book :${atrLibrary}" 
+            th:text="|title: ${book.title}, author: ${book.author}|">
+        </li>
+    </ul>
+    
+    </br>
+    <a href="/"><b>INDEX</b></a>
+</body>
+</html>

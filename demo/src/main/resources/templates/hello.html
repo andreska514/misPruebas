@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+	</br>
+	th:text="${helloWorld}" --> <span th:text="${helloWorld}"></span></br>
+	th:text="${title}" --> <span th:text="${title}"></span></br>
+	Usuario:
+	<span th:text="${user}"></span></br>Contraseña:
+	<span th:text="${pass}"></span>
+
+	<ul>
+		<li th:each="item: ${list}" th:text="${item}">
+	</ul>
+
+	<table border>
+		<thead>
+			<tr>
+				<td>ACTIVE</td>
+				<td>ID</td>
+				<td>NOMBRE</td>
+				<td>APELLIDO</td>
+				<td>T. tipo</td>
+				<td>T. número</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="person: ${personList}">
+				<td><input type="checkbox" disabled
+					th:checked="${person.active}"></td>
+				<td th:text="${person.id}"></td>
+				<td th:text="${person.name}"></td>
+				<td th:text="${person.surname}"></td>
+				<td colspan="2">
+					<table border>
+						<tr th:each="telefono: ${person.telefonos}">
+							<td th:text="${telefono.tipo}"></td>
+							<td th:text="${telefono.numero}"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+	</br>
+	</br>
+	<a href="/"><b>INDEX</b></a>
+
+</body>
+</html>
